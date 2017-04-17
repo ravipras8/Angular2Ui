@@ -1,0 +1,21 @@
+<div>hey coming
+    <div *ngIf="errorMessage">
+        {{errorMessage}}
+    </div>
+<table>
+    <tbody><tr *ngFor="let fd of fields">
+        <div *ngIf ="fd">
+    <div *ngIf="fd.type !=='dropdown'">
+       <td>{{fd.label}}</td> <td><input [type] = "fd.type" [id]="fd.id" /></td>
+    </div>
+    <div *ngIf="fd.type ==='dropdown'">
+        <td>{{fd.label}}</td> <td><select [id]="fd.id" >
+            <option>a</option>
+            <option>b</option>
+            </select></td>
+    </div>
+</div>
+        
+        </tr></tbody>
+</table>
+</div>
