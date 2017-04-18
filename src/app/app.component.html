@@ -1,5 +1,18 @@
-<div><h1>
-  {{title}}
-</h1>
-<home-page></home-page>
+<div>
+  <md-toolbar color="primary">
+    <span><md-icon>mood</md-icon></span>
+
+    <span> {{title}} </span>
+
+    <button md-icon-button [md-menu-trigger-for]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+  </md-toolbar>
+  <md-menu x-position="before" #menu="mdMenu">
+    <button md-menu-item *ngFor="let opt of menuDropdown">{{opt}}</button>
+  </md-menu>
+
+  <md-card>
+    <home-page></home-page>
+  </md-card>
 </div>
