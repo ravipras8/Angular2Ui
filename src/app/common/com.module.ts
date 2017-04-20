@@ -7,27 +7,25 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppComponent } from './app.component';
-import { ComModule } from 'app/common/com.module';
 import { MainLayoutComponent } from 'app/common/layout/main-layout.component';
+import { HomePageComponent } from 'app/home/home-page.component';
+import { AppWebService } from 'app/common/webservices/app-web.services';
 
 @NgModule({
   declarations: [
-    AppComponent
+      MainLayoutComponent,
+      HomePageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    ComModule,
     MaterialModule.forRoot(),
     BrowserAnimationsModule,
-    RouterModule.forRoot([
-      { path: '', component: MainLayoutComponent, pathMatch: 'full' },
-      { path: '**', component: MainLayoutComponent, pathMatch: 'full' }
-    ]),
+    RouterModule.forChild([
+            { path: 'home', component: HomePageComponent }
+        ])
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AppWebService]
 })
-export class AppModule { }
+export class ComModule { }
