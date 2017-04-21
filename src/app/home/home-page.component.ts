@@ -28,7 +28,7 @@ export class HomePageComponent implements OnInit {
             error => this.errorMessage = <any>error
         );
     }
-    navToPostData(): void {
+   /* navToPostData(): void {
         this._router.navigate(['/post']);
-    }
+    }*/
 }

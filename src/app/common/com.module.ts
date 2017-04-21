@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { MainLayoutComponent } from 'app/common/layout/main-layout.component';
 
@@ -19,6 +20,7 @@ import { MainLayoutComponent } from 'app/common/layout/main-layout.component';
     HttpModule,
     MaterialModule.forRoot(),
     BrowserAnimationsModule,
+    NgbModule,
     RouterModule.forChild([
     ])
   ],

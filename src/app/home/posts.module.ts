@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { PostDataComponent } from 'app/home/postdata/post-data.component';
 import { HomePageComponent } from 'app/home/home-page.component';
@@ -22,6 +23,7 @@ import {MainLayoutComponent} from 'app/common/layout/main-layout.component';
     HttpModule,
     MaterialModule.forRoot(),
     BrowserAnimationsModule,
+    NgbModule,
     RouterModule.forChild([{ path: 'post', component: MainLayoutComponent, pathMatch: 'full', children: [{ path: '',  component: PostDataComponent }] }
     ])
   ],
