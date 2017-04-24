@@ -15,8 +15,3 @@ md-card {
 md-toolbar-row {
   justify-content: space-between;
 }
-.main-body{
-background: url(./assets/images/div-bg.jpg);
-background-position: 100% 100%;
-background-repeat: repeat;
-}

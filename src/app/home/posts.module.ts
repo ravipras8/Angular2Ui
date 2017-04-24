@@ -24,7 +24,7 @@ import {MainLayoutComponent} from 'app/common/layout/main-layout.component';
     MaterialModule.forRoot(),
     BrowserAnimationsModule,
     NgbModule,
-    RouterModule.forChild([{ path: 'post', component: MainLayoutComponent, pathMatch: 'full', children: [{ path: '',  component: PostDataComponent }] }
+    RouterModule.forChild([{ path: 'post/:id', component: MainLayoutComponent, pathMatch: 'full', children: [{ path: '',  component: PostDataComponent }] }
     ])
   ],
   providers: []

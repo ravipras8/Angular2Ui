@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { IFields, IField } from './home';
+import { IPost } from './home';
 import { AppWebService } from 'app/common/webservices/app-web.services';
 
 @Component({
@@ -11,9 +11,9 @@ import { AppWebService } from 'app/common/webservices/app-web.services';
     styleUrls: ['home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-    title = 'ravi';
+    // title = 'ravi';
     errorMessage: string;
-    fields: IField[];
+    posts: IPost[];
 
     constructor(private _appWebService: AppWebService,
                 private _router: Router
@@ -22,11 +22,12 @@ export class HomePageComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.title = this.title + 'p';
+        // this.title = this.title + 'p';
         this._appWebService.getDynamicComps().subscribe(
-            fields => this.fields = fields.fields,
+            fields => this.posts = fields,
             error => this.errorMessage = <any>error
         );
+        console.log('another'+this.posts);
     }
    /* navToPostData(): void {
         this._router.navigate(['/post']);

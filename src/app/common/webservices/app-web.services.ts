@@ -1,21 +1,29 @@
 import { Injectable } from '@angular/core'
 import { Http,Response } from '@angular/http'
 import { Observable } from 'rxjs/Observable'
-import { IFields } from 'app/home/home';
+import { IPost } from 'app/home/home';
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/do'
 import 'rxjs/add/operator/catch'
 
 @Injectable()
 export class AppWebService {
-    private serviceUrl: string ='http://localhost:8211/ravi/dynamic';
+    private serviceUrl: string ='api/posts';
+    private jsFile: string = 'posts-json.json';
 
     constructor(private _http: Http){
 
     }
-    getDynamicComps(): Observable<IFields> {
-        return this._http.get(this.serviceUrl)
-        .map((res: Response) => <IFields> res.json())
+    getDynamicComps(): Observable<IPost[]> {
+        return this._http.get(`${this.serviceUrl}/${this.jsFile}`)
+        .map((res: Response) => <IPost[]> res.json())
+        .do(data => console.log(JSON.stringify(data)))
+        .catch(this.handleErr);
+    }
+    getPost(id: number): Observable<IPost> {
+        // id= id % 
+        return this._http.get(`${this.serviceUrl}/${id}`)
+        .map((res: Response) => <IPost> res.json())
         .do(data => console.log(JSON.stringify(data)))
         .catch(this.handleErr);
     }

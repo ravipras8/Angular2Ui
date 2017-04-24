@@ -5,7 +5,17 @@ table{
 .mat-card {
   background: lightblue;
   padding: 80px;
+  border-radius: 50px;
 }
-.main-body{
-background: yellow;
+.card{
+    margin: 10px 10px 10px 10px;
+    float:left;
+    width: 20rem;
+    background:  url(/assets/images/div-bg.jpg);
+}
+.card-title{
+    color:yellow;
+}
+.card-text{
+    color:lightblue;
 }
