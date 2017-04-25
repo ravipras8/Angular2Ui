@@ -10,13 +10,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { PostDataComponent } from 'app/home/postdata/post-data.component';
 import { HomePageComponent } from 'app/home/home-page.component';
-import { HomePageService } from 'app/home/home-page.service';
+import { PostsFilterPipe } from 'app/home/posts-filter.pipe';
 import {MainLayoutComponent} from 'app/common/layout/main-layout.component';
 
 @NgModule({
   declarations: [
     PostDataComponent,
-    HomePageComponent
+    HomePageComponent,
+    PostsFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -28,6 +29,6 @@ import {MainLayoutComponent} from 'app/common/layout/main-layout.component';
     RouterModule.forChild([{ path: 'post/:id', component: MainLayoutComponent, pathMatch: 'full', children: [{ path: '',  component: PostDataComponent }] }
     ])
   ],
-  providers: [HomePageService]
+  providers: []
 })
 export class PostsModule { }

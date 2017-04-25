@@ -1,4 +1,4 @@
-<div class="card" *ngFor="let pt of posts">
+<div class="card" *ngFor="let pt of posts | postsFilter : homePageService.searchFilter">
   <img class="card-img-top" src="favicon.ico" alt="Card image cap">
   <div class="card-block">
     <h4 class="card-title">{{pt.title}}</h4>

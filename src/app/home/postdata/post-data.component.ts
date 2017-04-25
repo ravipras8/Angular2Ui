@@ -24,7 +24,7 @@ export class PostDataComponent implements OnInit{
             field => this.post = field,
             error => this.errorMessage = <any>error
         );
-        // console.log('this ismy id:'+id);
+        this.homePageService.showSearchFilter = false;
     }
     goBack(): void{
         this._router.navigate(["/"]);

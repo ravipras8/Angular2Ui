@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { IPost } from './home';
 import { AppWebService } from 'app/common/webservices/app-web.services';
+import { HomePageService } from 'app/home/home-page.service';
 
 @Component({
     selector: 'home-page',
@@ -16,8 +17,8 @@ export class HomePageComponent implements OnInit {
     posts: IPost[];
 
     constructor(private _appWebService: AppWebService,
-                private _router: Router
-    ) {
+        private _router: Router,
+    public homePageService: HomePageService) {
 
     }
 
@@ -27,9 +28,9 @@ export class HomePageComponent implements OnInit {
             fields => this.posts = fields,
             error => this.errorMessage = <any>error
         );
-        console.log('another'+this.posts);
+        this.homePageService.showSearchFilter = true;
     }
-   /* navToPostData(): void {
-        this._router.navigate(['/post']);
-    }*/
+    /* navToPostData(): void {
+         this._router.navigate(['/post']);
+     }*/
 }

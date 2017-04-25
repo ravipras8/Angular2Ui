@@ -3,15 +3,21 @@
     <span><md-icon>mood</md-icon></span>
 
     <span> {{title}} </span>
-
-    <button md-icon-button [md-menu-trigger-for]="menu">
-      <md-icon>more_vert</md-icon>
-    </button>
+    <div>
+      <div *ngIf="homePageService.showSearchFilter" id="searchBar" (mouseout)="changeHover($event)" (mouseover)="changeHover($event)">
+        <input type="search" [(ngModel)] = "homePageService.searchFilter" [ngClass] ="{'on-src-hover': onSrcHoverFlag || homePageService.searchFilter}" class="form-control srch-input" name="search" id="search" placeholder="search">
+      </div>
+      <!--<div style="float:left;">
+      <button md-icon-button [md-menu-trigger-for]="menu">
+          <md-icon>more_vert</md-icon>
+      </button>
+      </div>-->
+    </div>
   </md-toolbar>
   <md-menu x-position="before" #menu="mdMenu">
     <button md-menu-item *ngFor="let opt of menuDropdown">{{opt}}</button>
   </md-menu>
-<div>
+  <div>
     <router-outlet></router-outlet>
-</div>
+  </div>
 </div>
