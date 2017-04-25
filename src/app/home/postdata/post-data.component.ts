@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { AppWebService } from 'app/common/webservices/app-web.services';
 import { IPost } from 'app/home/home';
+import { HomePageService } from 'app/home/home-page.service';
 
 @Component({
     templateUrl:'./post-data.component.html',
@@ -12,9 +13,10 @@ export class PostDataComponent implements OnInit{
     
     constructor(private _route: ActivatedRoute,
                 private _router: Router,
-                private appWebService: AppWebService) {
+                private appWebService: AppWebService,
+                private homePageService: HomePageService) {
     }
-    post: IPost;
+    post: IPost = this.homePageService.createEmptyIPost();
     errorMessage:string;
     ngOnInit(): void{
         let id =+this._route.snapshot.params['id'];

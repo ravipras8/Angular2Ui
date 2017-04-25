@@ -10,6 +10,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { PostDataComponent } from 'app/home/postdata/post-data.component';
 import { HomePageComponent } from 'app/home/home-page.component';
+import { HomePageService } from 'app/home/home-page.service';
 import {MainLayoutComponent} from 'app/common/layout/main-layout.component';
 
 @NgModule({
@@ -27,6 +28,6 @@ import {MainLayoutComponent} from 'app/common/layout/main-layout.component';
     RouterModule.forChild([{ path: 'post/:id', component: MainLayoutComponent, pathMatch: 'full', children: [{ path: '',  component: PostDataComponent }] }
     ])
   ],
-  providers: []
+  providers: [HomePageService]
 })
 export class PostsModule { }
